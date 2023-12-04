@@ -1,5 +1,3 @@
-from lib2to3.pygram import Symbols
-
 symbol_locations = dict()
 
 def check_adjacent_symbols(x, y):
