@@ -4,8 +4,7 @@ card_copies = list()
 
 def run():
     cards = list()
-    total_points = 0
-    with open("day_4_test_input.txt") as cards_file:
+    with open("day_4_input.txt") as cards_file:
         cards = cards_file.readlines()
 
     card_copies = [1 for x in range(0,len(cards))]
@@ -21,11 +20,11 @@ def run():
             if card_number in winning_numbers:
                 card_points += 1
         
-        this_card_multiplier = card_copies[card_counter]
+        this_card_copies = card_copies[card_counter]
         
         if card_points != 0:
             for c in range(card_counter + 1, card_counter + 1 + card_points):
-                card_copies[c] += card_copies[card_counter] * this_card_multiplier
+                card_copies[c] += this_card_copies
 
         card_counter += 1
 
